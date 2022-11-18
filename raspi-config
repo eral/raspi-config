@@ -2482,7 +2482,7 @@ do_wifi_ssid_passphrase() {
     done
   else
     if [ "$HIDDEN" -ne 0 ]; then
-      nmcli device wifi connect "$SSID"  password "$PASSPHRASE" hidden true | grep -q "activated"
+      nmcli device wifi connect "$SSID"  password "$PASSPHRASE" hidden yes | grep -q "activated"
     else
       nmcli device wifi connect "$SSID"  password "$PASSPHRASE" | grep -q "activated"
     fi
